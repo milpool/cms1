@@ -1,0 +1,27 @@
+{
+  "name": "cms1",
+  "version": "0.1.0",
+  "description": "Content Mangement System that connects third party APIs like facebook, twitter and flicker",
+  "main": "index.js",
+  "scripts": {
+    "harness": "node ./node_modules/tuxharness/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CMS",
+    "API",
+    "Twitter",
+    "Facebook",
+    "Kill",
+    "Me!",
+    "Flickr"
+  ],
+  "author": "Terry Paugh",
+  "license": "MIT",
+  "devDependencies": {
+    "tuxharness": "^2.0.2"
+  },
+  "dependencies": {
+    "dustjs-linkedin": "^2.7.2"
+  }
+}
