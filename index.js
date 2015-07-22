@@ -5,11 +5,22 @@ server.connection({port: 3000});
 
 server.route({
     method:'GET',
-    path: '/',
-    handler: function(request, reply){
-        reply('Hello, world!');
+    path: '/{param*}',
+    handler: {
+        directory:{
+            path: 'public',
+            listing: true
+        }
     }
 });
+
+//server.route({
+//    method:'GET',
+//    path: '/hello',
+//    handler: function(request, reply){
+//        reply('Hello, world!');
+//    }
+//});
 
 
 
