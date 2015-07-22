@@ -24,7 +24,7 @@
     <h3>Live demo</h3>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="credential.js"></script>
+    <script src="../js/credential.js"></script>
 
 <script>
     /*
@@ -36,7 +36,7 @@
     */
 //debugger; credentials.flickr.api_key
     $.ajax({
-        "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+credentials.flickr.api_key+'&tags=vancouver&format=JSON',
+        "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+credentials.flickr.api_key+'&tags=vancouver&format=json&nojsoncallback=1',
         "success": function(response){
             console.log(response);
             debugger;
