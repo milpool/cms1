@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3flickr.html</title>
+</head>
+
+<body>
+	<h1>CMS</h1>
+    <h2>Flickr</h2>
+    
+    <h3>Goal</h3>
+    <p>As a user, I want to see photos tagged with Vancouver.</p>
+    <p>As a dev, I want to search Flickr's API for public photos with the tag "Vancouver"</p>
+    
+    <h3>Technologies</h3>
+    <ul>
+    	<li>Flickr API</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>jQuery AJAX</li>
+    </ul>
+    
+    <h3>Live demo</h3>
+    <script>
+        /*
+         Goal: output every photo title in a bulletted list
+         1) understand the JSON schema, find the photo titles
+         2) Determine the dot syntax path in the response to create loop on array
+         3) loop through photos
+         4) Output titles to console
+         5) Stage code milestone to local Git
+
+         */
+
+    </script>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="../js/credentials.js"></script>
+
+<script>
+
+//debugger; credentials.flickr.api_key
+//    $.ajax({
+//        "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+credentials.flickr.api_key+'&tags=vancouver&format=json&nojsoncallback=1',
+//        "success": function(response){
+//            $.each(response.photos.photo, function(x, photo)
+//            {
+//                $('<li></li>').html(photo);
+//            })
+//            console.log(response);
+//
+//        }
+//    });
+
+
+$.ajax({
+    "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + credentials.flickr.api_key + '&tags=vancouver&format=json&nojsoncallback=1',
+    "success": function (response) {
+        var photoHtml = "";
+        $.each(response.photos.photo, function (x, photo) {
+            photoHtml += '<img src="';
+            photoHtml += "https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg";
+            photoHtml += '">';
+
+        });
+
+        $('body').append(photoHtml);
+    }
+});
+
+
+
+
+</script>
+</body>
+</html>
