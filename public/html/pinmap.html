@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>5pinmap.html</title>
+
+
+    <style type="text/css">
+        #map {
+            height: 400px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<h1>Slippy Map</h1>
+
+<h2>Basic Map</h2>
+
+<h3>Goal</h3>
+
+<p>Display a slippy map with a starting location.</p>
+
+<h3>Technologies</h3>
+<ul>
+    <li>Google Maps JS API v3</li>
+    <li>Mapstraction JS abstraction layer API</li>
+    <li>JavaScript</li>
+    <li>CSS</li>
+    <li>HTML</li>
+</ul>
+
+<h3>Live demo</h3>
+<link href="http://leaflet.cloudmade.com/dist/leaflet.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="http://leaflet.cloudmade.com/dist/leaflet.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://mapstraction.com/mxn/build/latest/mxn.js?(googlev3,leaflet)" type="text/javascript"></script>
+
+<div id="map"></div>
+<script type="text/javascript">
+    var map = new mxn.Mapstraction('map', 'googlev3');
+    var latlon = new mxn.LatLonPoint(49.282705, -123.115357);
+    var pin = new mxn.Marker(latlon);
+
+    map.setCenterAndZoom(latlon, 17);
+
+    map.addMarker(pin);
+
+</script>
+
+
+</body>
+</html>

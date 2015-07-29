@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>2plugins.html</title>
+</head>
+
+<body>
+<h1>Slippy Map</h1>
+<h2>Plugin</h2>
+
+<h3>Goal</h3>
+<p>Add a slippy map to my web page pointing to my school.</p>
+
+<h3>Live demo</h3>
+
+<h4>Bing</h4>
+
+<div id="mapviewer"><iframe id="map" scrolling="no" width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed/?v=2&amp;cp=49.280940~-123.121005&amp;lvl=16&amp;sty=r&amp;ss=yp.vanarts~pg.1~rad.80&amp;form=LMLTEW&amp;emid=49485217-a40b-954f-ef13-153d0ffccc20"></iframe><div id="LME_maplinks" style="line-height:20px;"><a id="LME_largerMap" href="https://www.bing.com/maps/?v=2&amp;cp=49.280940~-123.121005&amp;lvl=16&amp;sty=r&amp;ss=yp.vanarts~pg.1~rad.80&amp;form=LMLTEW" target="_blank" style="margin:0 7px">View Larger Map</a><a id="LME_directions" href="https://www.bing.com/maps/?v=2&amp;cp=49.280940~-123.121005&amp;lvl=16&amp;sty=r&amp;ss=yp.vanarts~pg.1~rad.80&amp;form=LMLTEW&amp;rtp=%7Epos.49.2809405_-123.1210055_Downtown" target="_blank" style="margin:0 7px">Driving Directions</a></div></div>
+
+<h4>Google</h4>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:600px;"><div id="gmap_canvas" style="height:500px;width:600px;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.map-embed.com" id="get-map-data">embed google map</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:14,center:new google.maps.LatLng(49.2827046,-123.1153569),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(49.2827046, -123.1153569)});infowindow = new google.maps.InfoWindow({content:"<b>vanarts</b><br/>570 Dunsmuir St #600<br/>V6B 1Y1 vancouver" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+</body>
+</html>
