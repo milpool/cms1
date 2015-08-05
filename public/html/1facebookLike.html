@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>1facebookLike.html</title>
+</head>
+
+<body>
+	<h1>Facebook</h1>
+    <h2>Social Plugin</h2>
+    
+    <h3>Goal</h3>
+    <p>As a user, I want the ability to follow a blog post in Facebook.</p>
+    
+    <h3>Technologies</h3>
+    <ul>
+    	<li>Facebook social plugin</li>
+    </ul>
+    
+    <h3>Resources</h3>
+    <ul>
+    	<li><a href="https://developers.facebook.com/docs/plugins/like-button">Like button documentation</a></li>
+    </ul>
+    
+    <h3>Live demo</h3>
+
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <div class="fb-like" data-href="https://terrypaugh.net
+    " data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+</body>
+</html>
