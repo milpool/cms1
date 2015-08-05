@@ -54,9 +54,18 @@ server.route({
             };
 
         if(request.query && request.query.tags){
-            option.qa.tags = request.query.tags;
+            options.qs.tags = request.query.tags;
         }
-        
+         if(request.query && request.query.lat){
+            options.qs.lat = request.query.lat;
+        }
+        if(request.query && request.query.lon){
+            optios.qs.lon = request.query.lon;
+        }
+        if(request.query && request.query.radius){
+            options.qs.radius = request.query.radius;
+        }
+
         httpRequest(options, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log('flickr content coming soon') // CLI
