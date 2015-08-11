@@ -34,23 +34,23 @@
     4) on success, set a breakpoint and ensue JSON response matches expected format, schema. and has valid content
     5) stage a local commit to Git
     */
-//debugger; credentials.flickr.api_key
+ credentials.flickr.api_key
     $.ajax({
         "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+credentials.flickr.api_key+'&tags=vancouver&format=json&nojsoncallback=1',
         "success": function(response){
             console.log(response);
-            debugger;
+
         }
     })
 
 //  $.ajax({
 //        "url": 'https://api.flickr.com/services/rest/,
-// "data":{
-// "method":'flickr.photos.search',
-// "api_key":'credentials.flickr.api_key',
-// "tags":'vancouver',
-// "format":'json',
-// "nojsoncallback":1
+//"data":{
+//"method":'flickr.photos.search',
+//"api_key":'credentials.flickr.api_key',
+//"tags":'vancouver',
+//"format":'json',
+//"nojsoncallback":1,
 //        "success": function(response){
 //            console.log(response);
 //            debugger;

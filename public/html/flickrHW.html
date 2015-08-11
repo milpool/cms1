@@ -40,37 +40,38 @@
 
 <script>
 
-//debugger; credentials.flickr.api_key
-//    $.ajax({
-//        "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+credentials.flickr.api_key+'&tags=vancouver&format=json&nojsoncallback=1',
-//        "success": function(response){
-//            $.each(response.photos.photo, function(x, photo)
-//            {
-//                $('<li></li>').html(photo);
-//            })
-//            console.log(response);
+ //credentials.flickr.api_key
+    $.ajax({
+        "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='+credentials.flickr.api_key+'&tags=vancouver&format=json&nojsoncallback=1',
+        "success": function(response){
+            var photoSrc;
+            $.each(response.photos.photo, function(x, photo)
+            {
+                $('ul').append("<li><img src='https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg'></li>");
+            });
+            console.log(photoSrc);
+
+        }
+    });
+
+
+//$.ajax({
+//    "url": "http://localhost:8000/flickr",
+//    "dataType":"JSON",
+//    "success": function (response) {
+//        var photoHtml = "";
+//        $.each(response.photos.photo, function (x,photo) {
+//            photoHtml += '<img src="';
 //
-//        }
-//    });
-
-
-$.ajax({
-    "url": "http://localhost:8000/flickr",
-    "dataType":"JSON",
-    "success": function (response) {
-        var photoHtml = "";
-        $.each(response.photos.photo, function (x,photo) {
-            photoHtml += '<img src="';
-
-            photoHtml += photo.url_m;
-            photoHtml += '">';
-
-        });
-
-        $('body').append(photoHtml);
-    }
-});
-
+//            photoHtml += photo.url_m;
+//            photoHtml += '">';
+//
+//        });
+//
+//        $('body').append(photoHtml);
+//    }
+//});
+//
 
 
 

@@ -25,7 +25,7 @@
 <!-- Slippy map container -->
 <div id="mapBox" style="height: 400px;"></div>
 <!-- Flickr API global variables -->
-<script src="../js/credentials.js"></script>
+
 <!-- jQuery library -->
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- Map Provider -->
@@ -52,8 +52,9 @@
         },
         "success": function (response) {
             var photoHtml = "";
-            $.each(response.photos, function (x, photoSrc) {
-                photoHtml += '<div><img src="' + photoSrc + '"></div>';
+            console.log(response.photos);
+            $.each(response.photos, function (x, photo) {
+                photoHtml += '<div><img src="' + photo.photoSrc + '"></div>';
             });
             pin.setInfoBubble(photoHtml);
             map.addMarker(pin);

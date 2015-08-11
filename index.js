@@ -51,7 +51,7 @@ server.route({
             data = {
                 "method": 'flickr.photos.search',
                 "api_key": credentials.flickr.api_key,
-                "tags": 'vancouver',
+                //"tags": 'vancouver',
                 "format": 'json',
                 "nojsoncallback": 1
             },
