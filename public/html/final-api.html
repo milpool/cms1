@@ -12,7 +12,7 @@
 <div class="quiz-main">
     <h1>What kind of ?</h1>
 
-<div id="flickr"></div>
+    <div id="flickr"></div>
     <!-- Flickr API global variables -->
     <script src="../js/credentials.js"></script>
     <script src="../js/flickr.js"></script>
@@ -25,8 +25,13 @@
             "url": 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + credentials.flickr.api_key + '&tags=basset hounds&format=json&nojsoncallback=1',
             "success": function (response) {
                 var photoSrc;
+                var i = 0;
+
                 $.each(response.photos.photo, function (x, photo) {
-                    $('#flickr').append("<li><img src='https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg'></li>");
+                    if (i < 4) {
+                        $('#flickr').append("<img data-q='1' data='" + i + "' src='https://farm" + photo.farm + ".staticflickr.com/" + photo.server + "/" + photo.id + "_" + photo.secret + ".jpg'>");
+                    }
+                    i++;
                 });
 
 
@@ -73,7 +78,7 @@
                                                     $(res.data).each(function (x, element) {
                                                         if (i < 4) {
                                                             console.log(element.images[0].source);
-                                                            content += '<img data="' + i + '" src="' + element.images[0].source + '" >';
+                                                            content += '<img data-q="2" data="' + i + '" src="' + element.images[0].source + '" >';
 
                                                         }
                                                         i++;
@@ -82,6 +87,7 @@
 
 
                                                     $('img').on('click', function () {
+                                                        alert($(this).attr('data-q'));
                                                         alert($(this).attr('data'));
                                                     });
                                                 }
@@ -104,6 +110,19 @@
     </script>
 
     <div id="results">
+
+    </div>
+
+    <script>
+        var answer1 = data-q = "1"
+        var answer1 = data-q = "2"
+        var answer1 = data-q = "3"
+
+
+    </script>
+
+    <div id="answer">
+
 
     </div>
 </div>
